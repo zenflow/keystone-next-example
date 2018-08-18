@@ -14,8 +14,8 @@ const keystone = require('keystone');
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 keystone.init({
-	'name': 'Keystone Next Example',
-	'brand': 'Keystone Next Example',
+	'name': 'Jenfs Website',
+	'brand': 'Jenfs',
 	'auto update': true,
 	'session': true,
 	'auth': true,
