@@ -8,11 +8,23 @@
  */
 
 exports.create = {
-	User: [
-		{ 'name.first': 'Matthew', 'name.last': 'Brunetti', 'email': 'zenflow87@gmail.com', 'password': '123456', 'isAdmin': true },
-		{ 'name.first': 'Jenfs', 'name.last': 'Martins', 'email': 'jennifer.d.martins@gmail.com', 'password': '123456', 'isAdmin': true },
-	],
-};
+  User: [
+    {
+      'name.first': 'Matthew',
+      'name.last': 'Brunetti',
+      email: 'zenflow87@gmail.com',
+      password: '123456',
+      isAdmin: true,
+    },
+    {
+      'name.first': 'Jenfs',
+      'name.last': 'Martins',
+      email: 'jennifer.d.martins@gmail.com',
+      password: '123456',
+      isAdmin: true,
+    },
+  ],
+}
 
 /*
 
