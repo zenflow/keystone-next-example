@@ -1,0 +1,16 @@
+$color-force: #d1d1d1;
+$color-blossom: lighten($color-force, 20%);
+$color-fade: $color-force;
+
+$color-bg: #120c0e;
+$color-bg-alt: #40363a;
+
+/* $color-text: #dedce5; */
+$color-text: #d9d8dc;
+$font-size-base: 1.8rem;
+
+$font-family-sans-serif: Verdana, Geneva, sans-serif;
+$font-family-serif: serif;
+
+
+@import "~sakura.css/scss/main";
