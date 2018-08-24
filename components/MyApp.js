@@ -1,6 +1,7 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import MyNav from '../components/MyNav'
+import MyNav from './MyNav/MyNav'
+import MyFooter from './MyFooter'
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -15,13 +16,11 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <Container>
-        <header>
-          <MyNav />
-        </header>
+        <MyNav />
         <main>
           <Component {...pageProps} />
         </main>
-        <footer>Made with &lt;3 by Jenfs and Farthero</footer>
+        <MyFooter />
       </Container>
     )
   }
