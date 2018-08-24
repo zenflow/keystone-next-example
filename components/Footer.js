@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function MyFooter() {
+export default function Footer() {
   return (
     <footer>
-      <span>Made with &lt;3 by Jenfs and Fart-hero</span>
+      <span>&lt;3 Jenfs &amp; Matt</span>
       <style jsx>{`
         footer {
           text-align: center;
@@ -11,9 +11,8 @@ export default function MyFooter() {
         }
         span {
           padding: 6px;
-          border-radius: 4px;
-          background: darkred;
           opacity: 0.6;
+          color: white;
         }
       `}</style>
     </footer>

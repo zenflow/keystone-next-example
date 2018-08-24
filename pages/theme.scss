@@ -1,54 +1,19 @@
+@import "~normalize.css/normalize.css";
+
 $color-force: #d1d1d1;
 $color-blossom: lighten($color-force, 20%);
 $color-fade: $color-force;
-
 $color-bg: #120c0e;
 $color-bg-alt: #40363a;
-
-/* $color-text: #dedce5; */
 $color-text: #d9d8dc;
-$font-size-base: 1.8rem;
-
 $font-family-sans-serif: Verdana, Geneva, sans-serif;
 $font-family-serif: serif;
 
-/* Sakura.css v1.0.0
- * ================
- * Minimal css theme.
- * Project: https://github.com/oxalorg/sakura
- */
-
-/* Body */
-
-html {
-  font-size: 62.5%; // So that root size becomes 10px
-  font-family: serif;
-}
-
 body {
-  // $font-size-base must be a rem value
-  font-size: $font-size-base;
-  line-height: 1.618;
-  // max-width: 38em;
-  margin: auto;
+  font-family: $font-family-serif;
   color: $color-text;
   background-color: $color-bg;
-  padding: 13px;
 }
-
-/*
-@media (max-width: 684px) {
-  body {
-    font-size: $font-size-base * 0.85;
-  }
-}
-
-@media (max-width: 382px) {
-  body {
-    font-size: $font-size-base * 0.75;
-  }
-}
-*/
 
 @mixin word-wrap() {
   overflow-wrap: break-word;

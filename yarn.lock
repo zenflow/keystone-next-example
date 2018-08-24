@@ -7742,10 +7742,6 @@ safe-replace@^1.0.2, safe-replace@^1.0.3:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
-sakura.css@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/sakura.css/-/sakura.css-1.0.0.tgz#d16e673e7a7d16b3ec41c9555be152d960c329b2"
-
 sanitize-filename@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/sanitize-filename/-/sanitize-filename-1.6.1.tgz#612da1c96473fa02dccda92dcd5b4ab164a6772a"
