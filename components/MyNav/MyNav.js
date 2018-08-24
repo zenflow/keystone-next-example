@@ -20,26 +20,30 @@ export default function MyNav() {
         ))}
       </ul>
       <style jsx>{`
-        ul {
-          display: flex;
-        }
         li {
           list-style-type: none;
+          text-align: center;
+          align-self: center;
         }
         a {
-          font-size: 1em;
+          font-size: 1.2em;
         }
         @media all and (max-width: 699px) {
-          li {
-            flex: 1;
+          ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 50px 50px;
           }
           li.primary {
-            flex: auto;
+            grid-row: 1 / span 2;
           }
         }
         @media all and (min-width: 700px) {
+          ul {
+            display: flex;
+          }
           li {
-            flex: auto;
+            flex: 1 auto;
           }
         }
       `}</style>
