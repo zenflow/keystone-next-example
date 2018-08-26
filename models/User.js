@@ -1,11 +1,7 @@
-var keystone = require('keystone')
-var Types = keystone.Field.Types
+const keystone = require('keystone')
+const { Types } = keystone.Field
 
-/**
- * User Model
- * ==========
- */
-var User = new keystone.List('User')
+const User = new keystone.List('User')
 
 User.add(
   {
@@ -31,12 +27,8 @@ User.schema.virtual('canAccessKeystone').get(function() {
 })
 
 /**
- * Relationships
- */
-User.relationship({ ref: 'Post', path: 'posts', refPath: 'author' })
-
-/**
  * Registration
  */
 User.defaultColumns = 'name, email, isAdmin'
+User.track = true
 User.register()
