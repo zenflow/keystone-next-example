@@ -13,7 +13,7 @@ const navItems = [
 export default function Nav() {
   return (
     <nav>
-      <div className="primary">
+      <div className="logo">
         <Link href="/">
           <img src="/static/logo.svg" alt="Jenfs Logo" />
         </Link>
@@ -28,7 +28,7 @@ export default function Nav() {
       <style jsx>{`
         nav {
           margin: 10px;
-          font-size: 24px;
+          font-size: 1.2em;
         }
         nav > div {
           text-align: center;
@@ -48,7 +48,7 @@ export default function Nav() {
             grid-template-columns: 3fr 2fr 2fr 2fr;
             grid-template-rows: 50px 50px;
           }
-          nav > div.primary {
+          nav > div.logo {
             grid-row: 1 / span 2;
           }
         }
@@ -56,11 +56,16 @@ export default function Nav() {
           nav {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 50px 50px 50px;
+            grid-template-rows: 50px 35px 35px;
           }
-          nav > div.primary {
+          nav > div.logo {
             grid-column: 1 / span 3;
           }
+        }
+        a {
+          color: white;
+          text-decoration: none;
+          font-family: Verdana, Geneva, sans-serif;
         }
       `}</style>
     </nav>

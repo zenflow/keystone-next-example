@@ -1,5 +1,10 @@
 @import "~normalize.css/normalize.css";
 
+body {
+  background-color: #120c0e;
+  min-width: 360px;
+}
+
 $color-force: #d1d1d1;
 $color-blossom: lighten($color-force, 20%);
 $color-fade: $color-force;
@@ -8,12 +13,6 @@ $color-bg-alt: #40363a;
 $color-text: #d9d8dc;
 $font-family-sans-serif: Verdana, Geneva, sans-serif;
 $font-family-serif: serif;
-
-body {
-  font-family: $font-family-serif;
-  color: $color-text;
-  background-color: $color-bg;
-}
 
 @mixin word-wrap() {
   overflow-wrap: break-word;
@@ -26,152 +25,158 @@ body {
   hyphens: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.1;
-  font-family: Verdana, Geneva, sans-serif;
-  font-weight: 700;
-  @include word-wrap;
-}
-
-h1 { font-size: 2.35em }
-h2 { font-size: 2.00em }
-h3 { font-size: 1.75em }
-h4 { font-size: 1.5em }
-h5 { font-size: 1.25em }
-h6 { font-size: 1em }
-
-small, sub, sup {
-  font-size: 75%;
-}
-
-hr {
-  border-color: $color-blossom;
-}
-
-a {
-  text-decoration: none;
-  color: $color-blossom;
-
-  &:hover {
-    color: $color-fade;
-    border-bottom: 2px solid $color-text;
-  }
-
-}
-
-ul {
-  padding-left: 1.4em;
-}
-
-li {
-  margin-bottom: 0.4em;
-}
-
-blockquote {
-  font-style: italic;
-  margin-left: 1.5em;
-  padding-left: 1em;
-  border-left: 3px solid $color-blossom;
-}
-
-img {
-  max-width: 100%;
-}
-
-/* Pre and Code */
-
-pre {
-  background-color: $color-bg-alt;
-  display: block;
-  padding: 1em;
-  overflow-x: auto;
-}
-
-code {
-  font-size: 0.9em;
-  padding: 0 0.5em;
-  background-color: $color-bg-alt;
-  white-space: pre-wrap;
-}
-
-pre > code {
-  padding: 0;
-  background-color: transparent;
-  white-space: pre;
-}
-
-/* Tables */
-
-table {
-  text-align: justify;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td, th {
-  padding: 0.5em;
-  border-bottom: 1px solid $color-bg-alt;
-}
-
-/* Buttons, forms and input */
-
-input, textarea {
-  border: 1px solid $color-text;
-
-  &:focus {
-    border: 1px solid $color-blossom;
-  }
-}
-
-textarea {
-  width: 100%;
-}
-
-.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
-  display: inline-block;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-
-  background-color: $color-blossom;
-  color: $color-bg;
-  border-radius: 1px;
-  border: 1px solid $color-blossom;
-  cursor: pointer;
-  box-sizing: border-box;
-
-  &[disabled] {
-    cursor: default;
-    opacity: .5;
-  }
-
-  &:focus, &:hover {
-    background-color: $color-fade;
-    border-color: $color-fade;
-    color: $color-bg;
-    outline: 0;
-  }
-}
-
-textarea, select, input[type] {
+.themed {
+  font-family: $font-family-serif;
   color: $color-text;
-  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
-  margin-bottom: 10px;
-  background-color: $color-bg-alt;
-  border: 1px solid $color-bg-alt;
-  border-radius: 4px;
-  box-shadow: none;
-  box-sizing: border-box;
 
-  &:focus {
-    border: 1px solid $color-blossom;
-    outline: 0;
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 700;
+    margin: 0 0 0.5em 0;
+    @include word-wrap;
   }
-}
 
-label, legend, fieldset {
-  display: block;
-  margin-bottom: .5rem;
-  font-weight: 600;
+  h1 { font-size: 2.35em }
+  h2 { font-size: 2.00em }
+  h3 { font-size: 1.75em }
+  h4 { font-size: 1.5em }
+  h5 { font-size: 1.25em }
+  h6 { font-size: 1em }
+
+  small, sub, sup {
+    font-size: 75%;
+  }
+
+  hr {
+    border-color: $color-blossom;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-blossom;
+
+    &:hover {
+      color: $color-fade;
+      border-bottom: 2px solid $color-text;
+    }
+
+  }
+
+  ul {
+    padding-left: 1.4em;
+  }
+
+  li {
+    margin-bottom: 0.4em;
+  }
+
+  blockquote {
+    font-style: italic;
+    margin-left: 1.5em;
+    padding-left: 1em;
+    border-left: 3px solid $color-blossom;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  /* Pre and Code */
+
+  pre {
+    background-color: $color-bg-alt;
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+  }
+
+  code {
+    font-size: 0.9em;
+    padding: 0 0.5em;
+    background-color: $color-bg-alt;
+    white-space: pre-wrap;
+  }
+
+  pre > code {
+    padding: 0;
+    background-color: transparent;
+    white-space: pre;
+  }
+
+  /* Tables */
+
+  table {
+    text-align: justify;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    padding: 0.5em;
+    border-bottom: 1px solid $color-bg-alt;
+  }
+
+  /* Buttons, forms and input */
+
+  input, textarea {
+    border: 1px solid $color-text;
+
+    &:focus {
+      border: 1px solid $color-blossom;
+    }
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    background-color: $color-blossom;
+    color: $color-bg;
+    border-radius: 1px;
+    border: 1px solid $color-blossom;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &[disabled] {
+      cursor: default;
+      opacity: .5;
+    }
+
+    &:focus, &:hover {
+      background-color: $color-fade;
+      border-color: $color-fade;
+      color: $color-bg;
+      outline: 0;
+    }
+  }
+
+  textarea, select, input[type] {
+    color: $color-text;
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    margin-bottom: 10px;
+    background-color: $color-bg-alt;
+    border: 1px solid $color-bg-alt;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+
+    &:focus {
+      border: 1px solid $color-blossom;
+      outline: 0;
+    }
+  }
+
+  label, legend, fieldset {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+  }
 }

@@ -5,22 +5,26 @@
   "dependencies": {
     "@zeit/next-sass": "^0.2.0",
     "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
     "dotenv": "^6.0.0",
     "keystone": "^4.0.0",
     "next": "^6.1.1",
     "next-router-events": "^2.1.0",
+    "next-routes": "^1.4.2",
     "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react-dom": "^16.3.1",
+    "react-image-gallery": "^0.8.10"
   },
   "devDependencies": {
     "zenflow-lint-js": "^2.0.0"
   },
   "scripts": {
-    "start": "node keystone.js",
+    "dev": "cross-env NODE_ENV=development node keystone.js",
+    "start": "cross-env NODE_ENV=production node keystone.js",
     "fix": "zenflow-lint-js --fix",
     "lint": "zenflow-lint-js",
     "test": "npm run lint"
