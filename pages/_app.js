@@ -21,10 +21,10 @@ export default class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { router, Component, pageProps } = this.props
     return (
       <Container>
-        <Nav />
+        <Nav currentPath={router.asPath} />
         <main>
           <Component {...pageProps} />
         </main>
