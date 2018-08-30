@@ -1,10 +1,9 @@
-import './theme.scss'
+import './lib/index.scss'
 import React from 'react'
 import App, { Container } from 'next/app'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import routerEvents from 'next-router-events'
-import './nprogress.scss'
 import NProgress from 'nprogress'
 
 NProgress.configure({ showSpinner: false })
