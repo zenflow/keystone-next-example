@@ -24,7 +24,7 @@ export default class GalleryPage extends Component {
       }
     })
     return (
-      <main>
+      <div>
         <Head>
           <title>{`${this.props.gallery.name}  / Jenfs`} </title>
         </Head>
@@ -58,7 +58,7 @@ export default class GalleryPage extends Component {
             padding: 0 13px;
           }
         `}</style>
-      </main>
+      </div>
     )
   }
 }

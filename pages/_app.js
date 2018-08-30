@@ -25,7 +25,9 @@ export default class MyApp extends App {
     return (
       <Container>
         <Nav />
-        <Component {...pageProps} />
+        <main>
+          <Component {...pageProps} />
+        </main>
         <Footer />
       </Container>
     )

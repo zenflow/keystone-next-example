@@ -20,7 +20,7 @@ export default class LibraryPage extends Component {
   render() {
     const libraryTitle = capitalize(this.props.library.name)
     return (
-      <main>
+      <div>
         <Head>
           <title>{`${libraryTitle}  / Jenfs`}</title>
         </Head>
@@ -45,7 +45,7 @@ export default class LibraryPage extends Component {
             padding: 0 13px;
           }
         `}</style>
-      </main>
+      </div>
     )
   }
 }
