@@ -4,29 +4,28 @@ import axios from 'axios'
 import PropTypes from 'prop-types'
 import ImageGallery from 'react-image-gallery'
 import Head from 'next/head'
+import capitalize from '../helpers/capitalize'
 
 export default class GalleryPage extends Component {
   static propTypes = {
-    gallery: PropTypes.any,
+    libraryName: PropTypes.string,
+    gallery: PropTypes.object,
   }
   static async getInitialProps({ query }) {
     // TODO: handle 404 not found errors
+    const libraryName = query.library
     const gallery = (await axios.get(
       `http://localhost:3000/api/gallery?key=${query.gallery}`,
     )).data
-    return { gallery }
+    return { libraryName, gallery }
   }
   render() {
-    const items = this.props.gallery.images.map(image => {
-      return {
-        original: image.url,
-        thumbnail: image.url,
-      }
-    })
     return (
       <div>
         <Head>
-          <title>{`${this.props.gallery.name}  / Jenfs`} </title>
+          <title>{`${this.props.gallery.name} / ${capitalize(
+            this.props.libraryName,
+          )} / Jenfs`}</title>
         </Head>
         <header className="themed">
           <h1>{this.props.gallery.name}</h1>
@@ -38,7 +37,12 @@ export default class GalleryPage extends Component {
         </header>
         <section>
           <ImageGallery
-            items={items}
+            items={this.props.gallery.images.map(image => {
+              return {
+                original: image.url,
+                thumbnail: image.url,
+              }
+            })}
             lazyLoad={true}
             showBullets={true}
             showIndex={true}

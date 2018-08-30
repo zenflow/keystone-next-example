@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import Head from 'next/head'
 import GalleryList from '../components/GalleryList'
+import capitalize from '../helpers/capitalize'
 
 export default class LibraryPage extends Component {
   static propTypes = {
@@ -18,14 +19,13 @@ export default class LibraryPage extends Component {
     return { library }
   }
   render() {
-    const libraryTitle = capitalize(this.props.library.name)
     return (
       <div>
         <Head>
-          <title>{`${libraryTitle}  / Jenfs`}</title>
+          <title>{`${capitalize(this.props.library.name)} / Jenfs`}</title>
         </Head>
         <header className="themed">
-          <h1>{libraryTitle}</h1>
+          <h1>{capitalize(this.props.library.name)}</h1>
           <em>{this.props.library.galleries.length} galerias</em>
           <p>Possible blurb here</p>
         </header>
@@ -48,8 +48,4 @@ export default class LibraryPage extends Component {
       </div>
     )
   }
-}
-
-function capitalize(str) {
-  return str[0] ? str[0].toUpperCase() + str.slice(1) : str
 }
