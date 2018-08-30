@@ -1,8 +1,7 @@
-import Link from 'next/link'
-import React from 'react'
+import { Link } from '../next-routes'
 
 const navItems = [
-  ['Home', '/'],
+  ['Home', '/home'],
   ['Pinturas', '/pinturas'],
   ['Fotografias', '/fotografias'],
   ['Desenhos', '/desenhos'],
@@ -14,13 +13,15 @@ export default function Nav() {
   return (
     <nav>
       <div className="logo">
-        <Link href="/">
-          <img src="/static/logo.svg" alt="Jenfs Logo" />
+        <Link route="/home">
+          <a>
+            <img src="/static/logo.svg" alt="Jenfs Logo" />
+          </a>
         </Link>
       </div>
       {navItems.map(([title, path]) => (
         <div key={path}>
-          <Link href={path}>
+          <Link route={path}>
             <a>{title}</a>
           </Link>
         </div>

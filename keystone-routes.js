@@ -1,7 +1,6 @@
 const keystone = require('keystone')
 
-exports = module.exports = nextApp => keystoneApp => {
-  const handle = nextApp.getRequestHandler()
+module.exports = keystoneApp => {
   keystoneApp.get('/api/galleries', (req, res, next) => {
     const Gallery = keystone.list('Gallery')
     Gallery.model
@@ -44,8 +43,5 @@ exports = module.exports = nextApp => keystoneApp => {
           images: gallery.images,
         })
       })
-  })
-  keystoneApp.get('*', (req, res) => {
-    return handle(req, res)
   })
 }

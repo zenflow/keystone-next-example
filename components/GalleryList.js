@@ -1,19 +1,18 @@
 import { Component } from 'react'
-import Link from 'next/link'
+import { Link } from '../next-routes'
 import PropTypes from 'prop-types'
 
 export default class GalleryList extends Component {
   static propTypes = {
-    library: PropTypes.string,
-    galleries: PropTypes.array,
+    library: PropTypes.any,
   }
   render() {
     return (
       <div className="container">
-        {this.props.galleries.map((gallery, index) => (
+        {this.props.library.galleries.map((gallery, index) => (
           <Link
             key={index}
-            href={`/${this.props.library}/gallery?key=${gallery.key}`}
+            route={`/${this.props.library.name}/${gallery.key}`}
           >
             <a className="gallery themed">
               <div>

@@ -1,17 +1,16 @@
-import React from 'react'
+import { Component } from 'react'
+import { Router } from '../next-routes'
 
-export default function OtherPage() {
-  return (
-    <main className="themed">
-      <h1>Hi</h1>
-      <p>Sup</p>
-      <style jsx>{`
-        main {
-          max-width: 38em;
-          margin: auto;
-          padding: 0 13px;
-        }
-      `}</style>
-    </main>
-  )
+export default class IndexPage extends Component {
+  static async getInitialProps({ res }) {
+    if (res) {
+      res.writeHead(302, {
+        Location: '/home',
+      })
+      res.end()
+    } else {
+      Router.push('/home')
+    }
+    return {}
+  }
 }
