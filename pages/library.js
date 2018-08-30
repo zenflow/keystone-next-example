@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
+import Head from 'next/head'
 import GalleryList from '../components/GalleryList'
 
 export default class LibraryPage extends Component {
@@ -17,10 +18,14 @@ export default class LibraryPage extends Component {
     return { library }
   }
   render() {
+    const libraryTitle = capitalize(this.props.library.name)
     return (
       <main>
+        <Head>
+          <title>{`${libraryTitle}  / Jenfs`}</title>
+        </Head>
         <header className="themed">
-          <h1>{capitalize(this.props.library.name)}</h1>
+          <h1>{libraryTitle}</h1>
           <em>{this.props.library.galleries.length} galerias</em>
           <p>Possible blurb here</p>
         </header>

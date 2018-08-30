@@ -1,6 +1,5 @@
 - navbar indicating current section /w underline
     :hover /w animated gradient - https://css-tricks.com/snippets/css/gradient-text/
-- page titles
 - hidden link to /keystone/
 - library model
 - graphql integration (or fix api query to https://localhost)

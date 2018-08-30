@@ -3,6 +3,7 @@ import { Component } from 'react'
 import axios from 'axios'
 import PropTypes from 'prop-types'
 import ImageGallery from 'react-image-gallery'
+import Head from 'next/head'
 
 export default class GalleryPage extends Component {
   static propTypes = {
@@ -24,6 +25,9 @@ export default class GalleryPage extends Component {
     })
     return (
       <main>
+        <Head>
+          <title>{`${this.props.gallery.name}  / Jenfs`} </title>
+        </Head>
         <header className="themed">
           <h1>{this.props.gallery.name}</h1>
           <div
