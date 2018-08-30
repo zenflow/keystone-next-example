@@ -1,7 +1,8 @@
+import './gallery.scss'
 import { Component } from 'react'
 import axios from 'axios'
 import PropTypes from 'prop-types'
-import Gallery from '../../components/Gallery'
+import ImageGallery from 'react-image-gallery'
 
 export default class GalleryPage extends Component {
   static propTypes = {
@@ -15,6 +16,12 @@ export default class GalleryPage extends Component {
     return { gallery }
   }
   render() {
+    const items = this.props.gallery.images.map(image => {
+      return {
+        original: image.url,
+        thumbnail: image.url,
+      }
+    })
     return (
       <main>
         <header className="themed">
@@ -26,7 +33,13 @@ export default class GalleryPage extends Component {
           />
         </header>
         <section>
-          <Gallery images={this.props.gallery.images} />
+          <ImageGallery
+            items={items}
+            lazyLoad={true}
+            showBullets={true}
+            showIndex={true}
+            useTranslate3D={false}
+          />
         </section>
         <style jsx>{`
           header {

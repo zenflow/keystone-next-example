@@ -1,6 +1,6 @@
 @import "~normalize.css/normalize.css";
-@import "themed";
-@import "nprogress";
+@import "../styles/themed";
+@import "../styles/nprogress";
 
 body {
   background-color: #120c0e;
