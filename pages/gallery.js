@@ -5,18 +5,24 @@ import Head from 'next/head'
 import capitalize from '../helpers/capitalize'
 import GallerySlideshow from '../components/GallerySlideshow'
 import { Router } from '../next-routes'
+import redirect from '../helpers/redirect'
 
 export default class GalleryPage extends Component {
   static propTypes = {
     query: PropTypes.object,
     gallery: PropTypes.object,
   }
-  static async getInitialProps({ query }) {
+  static async getInitialProps({ res, query }) {
     // TODO: handle 404 not found errors
-    // TODO: short-circuit redirect here to first image if no image
     const gallery = (await axios.get(
       `http://localhost:3000/api/gallery?key=${query.gallery}`,
     )).data
+    if (!query.image) {
+      return redirect(
+        res,
+        `/${query.library}/${query.gallery}/${gallery.images[0].public_id}`,
+      )
+    }
     return { query, gallery }
   }
   render() {
@@ -37,7 +43,6 @@ export default class GalleryPage extends Component {
           />
         </header>
         <section>
-          <pre style={{ color: 'white' }}>{JSON.stringify({}, 0, 2)}</pre>
           <GallerySlideshow
             images={gallery.images}
             startImage={gallery.images.find(
@@ -45,8 +50,7 @@ export default class GalleryPage extends Component {
             )}
             onSlide={image => {
               Router.replaceRoute('gallery', {
-                library: query.library,
-                gallery: query.gallery,
+                ...query,
                 image: image.public_id,
               })
             }}

@@ -1,16 +1,8 @@
 import { Component } from 'react'
-import { Router } from '../next-routes'
+import redirect from '../helpers/redirect'
 
 export default class IndexPage extends Component {
   static async getInitialProps({ res }) {
-    if (res) {
-      res.writeHead(302, {
-        Location: '/home',
-      })
-      res.end()
-    } else {
-      Router.pushRoute('/home')
-    }
-    return {}
+    return redirect(res, '/home')
   }
 }
