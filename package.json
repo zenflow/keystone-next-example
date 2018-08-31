@@ -18,7 +18,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-image-gallery": "^0.8.10"
+    "react-image-gallery": "^0.8.10",
+    "styled-jsx-plugin-sass": "^0.2.4"
   },
   "devDependencies": {
     "zenflow-lint-js": "^2.0.0"

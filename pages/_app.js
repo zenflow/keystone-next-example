@@ -1,4 +1,4 @@
-import './_app.scss'
+import '../styles/index.scss'
 import React from 'react'
 import App, { Container } from 'next/app'
 import Nav from '../components/Nav'

@@ -2,7 +2,6 @@
 - library model
 - graphql integration (or fix api query to https://localhost)
 
-- scss in styled jsx
 - transition animation
 - preview slideshows in GalleryList
 - fit gallery to screen height (with a minimum height of course)

@@ -9,7 +9,7 @@ export default class IndexPage extends Component {
       })
       res.end()
     } else {
-      Router.push('/home')
+      Router.pushRoute('/home')
     }
     return {}
   }
