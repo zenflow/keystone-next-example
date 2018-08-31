@@ -14,7 +14,7 @@ export default class GalleryList extends Component {
             key={index}
             route={`/${this.props.library.name}/${gallery.key}`}
           >
-            <a className="gallery themed">
+            <a className="themed">
               <div>
                 <h5>{gallery.name}</h5>
                 <span>{gallery.imageCount} imagens</span>
@@ -30,25 +30,25 @@ export default class GalleryList extends Component {
             grid-template-columns: repeat(auto-fill, 160px);
             grid-auto-rows: 160px;
             justify-content: center;
-          }
-          .container > .gallery {
-            position: relative;
-          }
-          .container > .gallery > div {
-            position: absolute;
-            padding: 8px;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.9);
-          }
-          .container > .gallery > img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            border-radius: 16px;
-            object-fit: cover;
+            & > a {
+              position: relative;
+              & > div {
+                position: absolute;
+                padding: 8px;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.9);
+              }
+              & > img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 16px;
+                object-fit: cover;
+              }
+            }
           }
         `}</style>
       </div>

@@ -72,13 +72,14 @@ export default class Nav extends Component {
               grid-column: 1 / span 3;
             }
           }
+
           a {
             color: white;
             text-decoration: none;
             font-family: Verdana, Geneva, sans-serif;
-          }
-          a.current {
-            border-bottom: 2px solid white;
+            &.current {
+              border-bottom: 2px solid white;
+            }
           }
         `}</style>
       </nav>

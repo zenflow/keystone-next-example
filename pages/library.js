@@ -37,9 +37,9 @@ export default class LibraryPage extends Component {
             max-width: 38em;
             margin: auto;
             padding: 0 13px;
-          }
-          em {
-            float: right;
+            em {
+              float: right;
+            }
           }
           section {
             padding: 0 13px;

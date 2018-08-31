@@ -25,10 +25,11 @@
     "zenflow-lint-js": "^2.0.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node keystone.js",
-    "start": "cross-env NODE_ENV=production node keystone.js",
     "fix": "zenflow-lint-js --fix",
     "lint": "zenflow-lint-js",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "dev": "cross-env NODE_ENV=development node keystone.js",
+    "build": "next build",
+    "start": "cross-env NODE_ENV=production node keystone.js"
   }
 }

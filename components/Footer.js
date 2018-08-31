@@ -6,13 +6,13 @@ export default function Footer() {
         footer {
           text-align: center;
           margin: 2em 0;
-        }
-        span {
-          padding: 6px;
-          opacity: 0.6;
-          color: white;
-          background: black;
-          border-radius: 4px;
+          span {
+            padding: 6px;
+            opacity: 0.6;
+            color: white;
+            background: black;
+            border-radius: 4px;
+          }
         }
       `}</style>
     </footer>

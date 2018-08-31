@@ -44,9 +44,6 @@ export default class GalleryPage extends Component {
             margin: auto;
             padding: 0 13px;
           }
-          em {
-            float: right;
-          }
           section {
             padding: 0 13px;
           }
