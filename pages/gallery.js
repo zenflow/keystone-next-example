@@ -4,27 +4,28 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 import capitalize from '../helpers/capitalize'
 import GallerySlideshow from '../components/GallerySlideshow'
+import { Router } from '../next-routes'
 
 export default class GalleryPage extends Component {
   static propTypes = {
+    query: PropTypes.object,
     gallery: PropTypes.object,
-    libraryName: PropTypes.string,
   }
   static async getInitialProps({ query }) {
     // TODO: handle 404 not found errors
+    // TODO: short-circuit redirect here to first image if no image
     const gallery = (await axios.get(
       `http://localhost:3000/api/gallery?key=${query.gallery}`,
     )).data
-    const libraryName = query.library
-    return { gallery, libraryName }
+    return { query, gallery }
   }
   render() {
-    const { gallery, libraryName } = this.props
+    const { query, gallery } = this.props
     return (
       <div>
         <Head>
           <title>{`${gallery.name} / ${capitalize(
-            libraryName,
+            query.library,
           )} / Jenfs`}</title>
         </Head>
         <header className="themed">
@@ -36,7 +37,20 @@ export default class GalleryPage extends Component {
           />
         </header>
         <section>
-          <GallerySlideshow gallery={gallery} />
+          <pre style={{ color: 'white' }}>{JSON.stringify({}, 0, 2)}</pre>
+          <GallerySlideshow
+            images={gallery.images}
+            startImage={gallery.images.find(
+              image => image.public_id === query.image,
+            )}
+            onSlide={image => {
+              Router.replaceRoute('gallery', {
+                library: query.library,
+                gallery: query.gallery,
+                image: image.public_id,
+              })
+            }}
+          />
         </section>
         <style jsx>{`
           header {

@@ -4,19 +4,23 @@ import ImageGallery from 'react-image-gallery'
 
 export default class GallerySlideshow extends Component {
   static propTypes = {
-    gallery: PropTypes.object,
+    images: PropTypes.array,
+    startImage: PropTypes.object,
+    onSlide: PropTypes.func,
   }
   render() {
-    const items = this.props.gallery.images.map(image => {
-      return {
-        original: image.url,
-        thumbnail: image.url,
-      }
-    })
+    const { images, startImage, onSlide } = this.props
     return (
       <div>
         <ImageGallery
-          items={items}
+          items={images.map(image => {
+            return {
+              original: image.url,
+              thumbnail: image.url,
+            }
+          })}
+          startIndex={startImage ? images.indexOf(startImage) : 0}
+          onSlide={currentIndex => onSlide(images[currentIndex])}
           lazyLoad={true}
           showBullets={true}
           showIndex={true}
