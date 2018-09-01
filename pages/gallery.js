@@ -5,11 +5,12 @@ import Head from 'next/head'
 import capitalize from '../helpers/capitalize'
 import GallerySlideshow from '../components/GallerySlideshow'
 import { Router } from '../next-routes'
+import { withRouter } from 'next/router'
 import redirect from '../helpers/redirect'
 
-export default class GalleryPage extends Component {
+class GalleryPage extends Component {
   static propTypes = {
-    query: PropTypes.object,
+    router: PropTypes.object,
     gallery: PropTypes.object,
   }
   static async getInitialProps({ res, query }) {
@@ -18,20 +19,21 @@ export default class GalleryPage extends Component {
       `http://localhost:3000/api/gallery?key=${query.gallery}`,
     )).data
     if (!query.image) {
+      // TODO: make data fetching for this case more efficient
       return redirect(
         res,
         `/${query.library}/${query.gallery}/${gallery.images[0].public_id}`,
       )
     }
-    return { query, gallery }
+    return { gallery }
   }
   render() {
-    const { query, gallery } = this.props
+    const { router, gallery } = this.props
     return (
       <div>
         <Head>
           <title>{`${gallery.name} / ${capitalize(
-            query.library,
+            router.query.library,
           )} / Jenfs`}</title>
         </Head>
         <header className="themed">
@@ -46,13 +48,17 @@ export default class GalleryPage extends Component {
           <GallerySlideshow
             images={gallery.images}
             startImage={gallery.images.find(
-              image => image.public_id === query.image,
+              image => image.public_id === router.query.image,
             )}
             onSlide={image => {
-              Router.replaceRoute('gallery', {
-                ...query,
-                image: image.public_id,
-              })
+              Router.replaceRoute(
+                'gallery',
+                {
+                  ...router.query,
+                  image: image.public_id,
+                },
+                { shallow: true },
+              )
             }}
           />
         </section>
@@ -70,3 +76,5 @@ export default class GalleryPage extends Component {
     )
   }
 }
+
+export default withRouter(GalleryPage)

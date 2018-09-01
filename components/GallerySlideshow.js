@@ -19,6 +19,7 @@ export default class GallerySlideshow extends Component {
               thumbnail: image.url,
             }
           })}
+          // TODO: use startIndex and onSlide as-is
           startIndex={startImage ? images.indexOf(startImage) : 0}
           onSlide={currentIndex => onSlide(images[currentIndex])}
           lazyLoad={true}
