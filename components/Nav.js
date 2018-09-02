@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import { withRouter } from 'next/router'
 import { Link } from '../next-routes'
 import isPathEqualOrInside from '../helpers/isPathEqualOrInside'
 
@@ -12,13 +13,13 @@ const navItems = [
   ['Contato', '/contato'],
 ]
 
-export default class Nav extends Component {
+class Nav extends Component {
   static propTypes = {
-    currentPath: PropTypes.string,
+    router: PropTypes.object,
   }
   render() {
     const isCurrentPath = path =>
-      isPathEqualOrInside(this.props.currentPath, path)
+      isPathEqualOrInside(this.props.router.asPath, path)
     return (
       <nav>
         <div className="logo">
@@ -86,3 +87,5 @@ export default class Nav extends Component {
     )
   }
 }
+
+export default withRouter(Nav)
